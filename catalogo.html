@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo - IPHONE STYLE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="renderizar()">
+    <header>
+        <img src="img/imagen logo.jpeg" class="logo-carnet">
+        <div class="search-bar">
+            <input type="text" id="input-bus" onkeyup="renderizar(this.value)" placeholder="¿Qué estás buscando hoy?">
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Nuestros Productos</h2>
+        <div id="grid-productos" class="grid-productos"></div>
+
+        <div class="card" style="margin-top: 40px;">
+            <h3>Mi Carrito</h3>
+            <div id="lista-carrito"></div>
+            <button class="btn-primary" onclick="finalizarWhatsApp()">Finalizar compra por WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Lógica específica para ver el carrito en esta página
+        const divCart = document.getElementById('lista-carrito');
+        divCart.innerHTML = carrito.map((p, i) => `
+            <p>${p.nombre} - $${p.precio} <button class="btn-delete" onclick="borrarDelCarrito(${i})">X</button></p>
+        `).join('');
+    </script>
+
+    <footer>
+        <hr>
+        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
+        <p><i>Firma: Creado por Iphone Style</i></p>
+    </footer>
+</body>
+</html>

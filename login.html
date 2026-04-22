@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - IPHONE STYLE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="max-width: 400px; margin: 50px auto;">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="user" placeholder="Usuario" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <input type="password" id="pass" placeholder="Contraseña" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+            <button class="btn-primary" onclick="validar()">Entrar</button>
+        </div>
+    </div>
+
+    <script>
+        function validar() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            if(u === "admin" && p === "admin123") {
+                location.href = "admin.html";
+            } else if(u && p) {
+                location.href = "inicio.html";
+            } else {
+                alert("Completa los datos");
+            }
+        }
+    </script>
+
+    <footer>
+        <hr>
+        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
+        <p><i>Firma: Creado por Iphone Style</i></p>
+    </footer>
+</body>
+</html>

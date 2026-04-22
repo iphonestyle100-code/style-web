@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - IPHONE STYLE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="mostrarProductosParaBorrar()">
+    <header>
+        <img src="img/imagen logo.jpeg" class="logo-carnet">
+        <h1 style="color: white; font-size: 18px;">Panel de Control IPHONE STYLE</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Subir Nuevo Producto</h2>
+            <input type="text" id="p-nombre" placeholder="Nombre (ej: Case Silicone Pro)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            <input type="number" id="p-precio" placeholder="Precio (ej: 15000)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            <input type="text" id="p-img" placeholder="URL de Imagen (Link de ImgBB)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            
+            <select id="p-cat" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <option value="silicone">Silicone Case</option>
+                <option value="cargadores">Cargadores</option>
+                <option value="auriculares">Auriculares</option>
+                <option value="disenos">Case con Diseño</option>
+                <option value="accesorios">correa</option>
+                <option value="vidrios templados"></option>
+                <option value="Protector de camaras"></option>
+
+            </select>
+            
+            <input type="text" id="p-mods" placeholder="Modelos (iPhone 11, 12, 13 Pro Max)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            
+            <button class="btn-primary" onclick="subirProducto()">Publicar Producto</button>
+        </div>
+
+        <div class="card">
+            <h2>Gestión de Catálogo</h2>
+            <p style="color: #666; font-size: 14px;">Aquí puedes ver tus productos activos y eliminarlos si ya no hay stock.</p>
+            <hr>
+            <div id="lista-gestion-admin">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <hr>
+        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
+        <p><i>Firma: Creado por Iphone Style</i></p>
+    </footer>
+</body>
+</html>

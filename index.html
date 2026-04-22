@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IPHONE STYLE - Bienvenidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="img/imagen logo.jpeg" class="logo-carnet" alt="Logo">
+        <h1 style="color: white; font-size: 18px;">IPHONE STYLE</h1>
+    </header>
+
+    <div class="container" style="text-align: center;">
+        <div class="card">
+            <h2>Bienvenido a la experiencia con nosotros</h2>
+            <p>Accesorios para tu iPhone.</p>
+            
+            <button class="btn-primary" onclick="location.href='login.html'" style="margin-bottom: 10px;">
+                Ingresar como Usuario
+            </button>
+
+            <button class="btn-primary" onclick="accesoAdmin()" style="background: #333; margin-top: 5px;">
+                Entrar como Admin
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function accesoAdmin() {
+            // Pedimos la contraseña exclusiva
+            const pass = prompt("Ingrese la contraseña de Administrador:");
+            
+            // Verificamos si es la correcta
+            if (pass === "123456Aa!") {
+                location.href = 'admin.html';
+            } else if (pass !== null) { 
+                // Si la contraseña es incorrecta y no canceló el aviso
+                alert("Contraseña incorrecta. Acceso denegado.");
+            }
+        }
+    </script>
+
+    <footer>
+        <hr>
+        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
+        <p><i>Firma: Creado por Iphone Style</i></p>
+    </footer>
+</body>
+</html>
