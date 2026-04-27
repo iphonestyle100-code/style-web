@@ -1,57 +1,41 @@
-/* Paleta de colores inspirada en una estética limpia y moderna */
-:root {
-    --bg-light: #ebebeb; /* Gris claro de fondo */
-    --white: #ffffff;
-    --text-dark: #333333;
-    --text-gray: #666666;
-    --accent-blue: #3483fa; /* Azul para enlaces y botones */
-    --border-color: #dddddd;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Panel de Gestión - IPHONE STYLE</h1>
+        
+        <section class="upload-section">
+            <h3>Cargar Nuevo Producto</h3>
+            <form id="product-form">
+                <input type="text" id="prod-name" placeholder="Nombre del producto" required>
+                <input type="number" id="prod-price" placeholder="Precio" required>
+                <input type="file" id="prod-image" accept="image/*" required>
+                <button type="submit">Subir Producto</button>
+            </form>
+        </section>
 
-body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    font-family: 'Proxima Nova', -apple-system, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Contenedor principal para dar aire al diseño */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Tarjetas de productos o secciones */
-.card {
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-    border: 1px solid var(--border-color);
-    margin-bottom: 20px;
-}
-
-/* Estilo del Footer */
-footer {
-    background-color: var(--white);
-    padding: 40px 20px;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-    margin-top: 50px;
-}
-
-.footer-content {
-    color: var(--text-gray);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.signature {
-    font-weight: bold;
-    color: var(--text-dark);
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-}
+        <section class="inventory-section">
+            <h3>Productos en Stock</h3>
+            <table id="products-table">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-body">
+                    </tbody>
+            </table>
+        </section>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

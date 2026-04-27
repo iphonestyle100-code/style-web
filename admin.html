@@ -1,11 +1,49 @@
-<h2>Nuevo Producto</h2>
-<input type="text" id="p-nombre" placeholder="Nombre">
-<input type="number" id="p-precio" placeholder="Precio">
-<input type="text" id="p-img" placeholder="URL de Imagen">
-<button onclick="window.subirProducto()">Subir a la Nube</button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - IPHONE STYLE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Panel de Gestión - IPHONE STYLE</h1>
+            <a href="inicio.html" class="btn-link">Volver al Inicio</a>
+        </header>
+        
+        <section class="upload-section">
+            <div class="card">
+                <h3>Cargar Nuevo Producto</h3>
+                <form id="product-form">
+                    <input type="text" id="prod-name" placeholder="Nombre del producto (ej: Funda iPhone 13)" required>
+                    <input type="number" id="prod-price" placeholder="Precio (ej: 12500)" required>
+                    <input type="text" id="prod-image-url" placeholder="Pegar URL de la imagen aquí" required>
+                    <button type="submit" id="btn-upload">Guardar en Inventario</button>
+                </form>
+            </div>
+        </section>
 
-<hr>
-<h2>Gestionar Existente</h2>
-<div id="lista-gestion-admin"></div>
-
-<script type="module" src="scripts.js"></script>
+        <section class="inventory-section">
+            <h3>Productos en Stock</h3>
+            <div class="table-wrapper">
+                <table id="products-table">
+                    <thead>
+                        <tr>
+                            <th>Vista Previa</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

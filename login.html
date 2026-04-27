@@ -2,37 +2,28 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - IPHONE STYLE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card" style="max-width: 400px; margin: 50px auto;">
-            <h2>Iniciar Sesión</h2>
-            <input type="text" id="user" placeholder="Usuario" style="width: 100%; padding: 10px; margin-bottom: 10px;">
-            <input type="password" id="pass" placeholder="Contraseña" style="width: 100%; padding: 10px; margin-bottom: 20px;">
-            <button class="btn-primary" onclick="validar()">Entrar</button>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>IPHONE STYLE</h1>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Correo electrónico" required>
+                <input type="password" id="login-password" placeholder="Contraseña" required>
+                <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                <button type="button" id="btn-register" class="btn-secondary">Registrarse</button>
+            </form>
+            <hr>
+            <div class="admin-access">
+                <p>¿Eres administrador?</p>
+                <input type="password" id="admin-key" placeholder="Clave de administrador">
+                <button onclick="checkAdminAccess()" class="btn-admin">Ingresar como Admin</button>
+            </div>
         </div>
     </div>
-
-    <script>
-        function validar() {
-            const u = document.getElementById('user').value;
-            const p = document.getElementById('pass').value;
-            if(u === "admin" && p === "admin123") {
-                location.href = "admin.html";
-            } else if(u && p) {
-                location.href = "inicio.html";
-            } else {
-                alert("Completa los datos");
-            }
-        }
-    </script>
-
-    <footer>
-        <hr>
-        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
-        <p><i>Firma: Creado por Iphone Style</i></p>
-    </footer>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

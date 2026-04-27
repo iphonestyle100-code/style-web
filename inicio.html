@@ -2,30 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - IPHONE STYLE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img src="img/WhatsApp Image 2026-04-18 at 01.06.43.jpeg" class="logo-carnet">
-        <div class="search-bar">
-            <input type="text" placeholder="Busca tu accesorio..." id="bus">
-            <button onclick="location.href='catalogo.html'">🔍</button>
-        </div>
+        <nav>
+            <div class="logo">IPHONE STYLE</div>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li id="admin-link" style="display:none;"><a href="admin.html">Panel Admin</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <section style="background: #1a1a1a; color: white; padding: 40px; border-radius: 8px; text-align: center;">
-            <h1 style="font-size: 35px;">VESTIMOS TU INVERSIÓN</h1>
-            <p>Porque un iPhone sin estilo es solo un teléfono más. Dale la exclusividad que merece.</p>
-            <button class="btn-primary" style="background: white; color: black; width: auto;" onclick="location.href='catalogo.html'">Explorar Catálogo</button>
-        </section>
-    </div>
+    <section class="hero">
+        <h1>Somos tu mejor opción</h1>
+        <p>Encuentra cargadores, auriculares, fundas, vidrios templados y más.</p>
+    </section>
 
-    <footer>
-        <hr>
-        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
-        <p><i>Firma: Creado por Iphone Style</i></p>
-    </footer>
+    <main class="container">
+        <h2>Quizás te interesen estos productos</h2>
+        <div id="featured-products" class="grid-products">
+            </div>
+    </main>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
