@@ -2,38 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPHONE STYLE - Tienda</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #ebebeb; margin: 0; font-family: sans-serif; }
+        header { background: #b6b6b5; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .grid-ml { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; padding: 20px; }
+        .card-ml { background: white; border-radius: 4px; overflow: hidden; border: 1px solid #ddd; }
+        .card-ml:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .img-ml { width: 100%; height: 200px; object-fit: contain; border-bottom: 1px solid #eee; }
+        .info-ml { padding: 15px; }
+        .precio-ml { font-size: 22px; margin: 0; color: #333; }
+        .nombre-ml { font-size: 14px; color: #666; margin: 5px 0; font-weight: normal; }
+        .btn-ml { width: 100%; background: #3483fa; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <header style="background-color: #fff159; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="display: flex; align-items: center;">
-            <img src="img/WhatsApp Image 2026-04-18 at 01.06.43.jpeg" style="height: 45px; margin-right: 10px;">
-            <h1 style="font-size: 20px; color: #333; margin: 0;">IPHONE STYLE</h1>
-        </div>
-        <button onclick="accesoAdmin()" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Admin</button>
+    <header>
+        <h1 style="font-size: 18px;">IPHONE STYLE</h1>
+        <button onclick="location.href='admin.html'">Panel Admin</button>
     </header>
 
-    <div style="background: #fff159; padding: 10px; text-align: center;">
-        <input type="text" id="buscador" placeholder="Buscar productos..." oninput="window.renderizar(this.value)" 
-               style="width: 80%; max-width: 500px; padding: 10px; border-radius: 20px; border: 1px solid #ddd; outline: none;">
+    <div style="background: #b6b6b5; padding: 10px; text-align: center;">
+        <input type="text" placeholder="Buscar..." oninput="window.renderizar(this.value)" style="width: 70%; padding: 10px; border-radius: 20px; border: none;">
     </div>
 
-    <div id="grid-productos" class="productos-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px; background: #ebebeb;">
-        </div>
+    <div id="grid-productos" class="grid-ml"></div>
 
     <script type="module" src="scripts.js"></script>
-
-    <script>
-        function accesoAdmin() {
-            const pass = prompt("Contraseña de Administrador:");
-            if (pass === "123456Aa!") {
-                location.href = 'admin.html';
-            } else if (pass !== null) {
-                alert("Incorrecta.");
-            }
-        }
-    </script>
 </body>
 </html>

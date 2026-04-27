@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - IPHONE STYLE</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h2>Cargar Nuevo Producto</h2>
-    <div class="form-admin">
-        <input type="text" id="p-nombre" placeholder="Nombre (Ej: iPhone 15 Pro)">
-        <input type="number" id="p-precio" placeholder="Precio (Solo números)">
-        <input type="text" id="p-img" placeholder="URL de la imagen">
-        <input type="text" id="p-cat" placeholder="Categoría">
-        <input type="text" id="p-mods" placeholder="Modelos compatibles">
-        <button onclick="subirProducto()" class="btn-primary">Subir a la Nube</button>
-    </div>
+<h2>Nuevo Producto</h2>
+<input type="text" id="p-nombre" placeholder="Nombre">
+<input type="number" id="p-precio" placeholder="Precio">
+<input type="text" id="p-img" placeholder="URL de Imagen">
+<button onclick="window.subirProducto()">Subir a la Nube</button>
 
-    <hr>
-    <h2>Gestionar Existentes</h2>
-    <div id="lista-gestion-admin">
-        </div>
+<hr>
+<h2>Gestionar Existente</h2>
+<div id="lista-gestion-admin"></div>
 
-    <script type="module" src="script.js"></script>
-    <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
-    <p><i>Firma: Creado por Iphone Style</i></p> 
-</body>
-</html>
+<script type="module" src="scripts.js"></script>
