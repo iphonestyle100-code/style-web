@@ -5,38 +5,17 @@
     <title>Catálogo - IPHONE STYLE</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="renderizar()">
+<body>
     <header>
-        <img src="img/imagen logo.jpeg" class="logo-carnet">
-        <div class="search-bar">
-            <input type="text" id="input-bus" onkeyup="renderizar(this.value)" placeholder="¿Qué estás buscando hoy?">
-        </div>
+        <h1>IPHONE STYLE</h1>
+        <input type="text" id="buscador" placeholder="Buscar modelo..." oninput="renderizar(this.value)">
     </header>
 
-    <div class="container">
-        <h2>Nuestros Productos</h2>
-        <div id="grid-productos" class="grid-productos"></div>
-
-        <div class="card" style="margin-top: 40px;">
-            <h3>Mi Carrito</h3>
-            <div id="lista-carrito"></div>
-            <button class="btn-primary" onclick="finalizarWhatsApp()">Finalizar compra por WhatsApp</button>
+    <div id="grid-productos" class="container">
         </div>
-    </div>
 
-    <script src="script.js"></script>
-    <script>
-        // Lógica específica para ver el carrito en esta página
-        const divCart = document.getElementById('lista-carrito');
-        divCart.innerHTML = carrito.map((p, i) => `
-            <p>${p.nombre} - $${p.precio} <button class="btn-delete" onclick="borrarDelCarrito(${i})">X</button></p>
-        `).join('');
-    </script>
-
-    <footer>
-        <hr>
-        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
-        <p><i>Firma: Creado por Iphone Style</i></p>
-    </footer>
+    <script type="module" src="script.js"></script>
+    <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
+    <p><i>Firma: Creado por Iphone Style</i></p> 
 </body>
 </html>
