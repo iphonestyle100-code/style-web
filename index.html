@@ -2,70 +2,38 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>IPHONE STYLE - Bienvenidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPHONE STYLE - Tienda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="img/WhatsApp Image 2026-04-18 at 01.06.43.jpeg" class="logo-carnet" alt="Logo">
-        <h1 style="color: white; font-size: 18px;">IPHONE STYLE</h1>
+    <header style="background-color: #fff159; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+            <img src="img/WhatsApp Image 2026-04-18 at 01.06.43.jpeg" style="height: 45px; margin-right: 10px;">
+            <h1 style="font-size: 20px; color: #333; margin: 0;">IPHONE STYLE</h1>
+        </div>
+        <button onclick="accesoAdmin()" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Admin</button>
     </header>
 
-    <div class="container" style="text-align: center;">
-        <div class="card">
-            <h2>Bienvenido a la experiencia con nosotros</h2>
-            <p>Accesorios para tu iPhone.</p>
-            
-            <button class="btn-primary" onclick="location.href='login.html'" style="margin-bottom: 10px;">
-                Ingresar como Usuario
-            </button>
-
-            <button class="btn-primary" onclick="accesoAdmin()" style="background: #333; margin-top: 5px;">
-                Entrar como Admin
-            </button>
-        </div>
+    <div style="background: #fff159; padding: 10px; text-align: center;">
+        <input type="text" id="buscador" placeholder="Buscar productos..." oninput="window.renderizar(this.value)" 
+               style="width: 80%; max-width: 500px; padding: 10px; border-radius: 20px; border: 1px solid #ddd; outline: none;">
     </div>
+
+    <div id="grid-productos" class="productos-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px; background: #ebebeb;">
+        </div>
+
+    <script type="module" src="scripts.js"></script>
 
     <script>
         function accesoAdmin() {
-            // Pedimos la contraseña exclusiva
-            const pass = prompt("Ingrese la contraseña de Administrador:");
-            
-            // Verificamos si es la correcta
+            const pass = prompt("Contraseña de Administrador:");
             if (pass === "123456Aa!") {
                 location.href = 'admin.html';
-            } else if (pass !== null) { 
-                // Si la contraseña es incorrecta y no canceló el aviso
-                alert("Contraseña incorrecta. Acceso denegado.");
+            } else if (pass !== null) {
+                alert("Incorrecta.");
             }
         }
     </script>
-
-    <footer>
-        <hr>
-        <p>© 2026 IPHONE STYLE - Todos los derechos reservados.</p>
-        <p><i>Firma: Creado por Iphone Style</i></p>
-    </footer>
-    // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyA3NrlF7b1h9vCP-AcpwRiMs4f0IC3jPfM",
-  authDomain: "base-dato-mi-web-iphone-style.firebaseapp.com",
-  projectId: "base-dato-mi-web-iphone-style",
-  storageBucket: "base-dato-mi-web-iphone-style.firebasestorage.app",
-  messagingSenderId: "293724705936",
-  appId: "1:293724705936:web:5bcff580d5a6821e2f3415",
-  measurementId: "G-ZBKR9Z62KF"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 </body>
 </html>
